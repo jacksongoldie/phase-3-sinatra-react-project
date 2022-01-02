@@ -1,4 +1,7 @@
 import '../App.css';
+import Header from './Header';
+import Container from './Container';
+import Champion from './Champion';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -13,7 +16,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>g</h1>
+      <Header />
+      <Container />
+      <Champion users={users} />
     </div>
   );
 }
