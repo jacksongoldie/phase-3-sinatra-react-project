@@ -1,11 +1,18 @@
 import Users from "./Users";
+import UserTasks from "./UserTasks";
 
 function Container({ users }) {
     return(
         <div>
-            <h1>Container</h1>
-            <Users users={users} />
+            <div>
+                <h1>Container</h1>
+                <Users users={users} />
+            </div>
+            <div>
+                <UserTasks />
+            </div>
         </div>
+        
     )
 }
 

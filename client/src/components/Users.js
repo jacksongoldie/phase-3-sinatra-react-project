@@ -1,12 +1,8 @@
+import UserCard from "./UserCard";
+
 function Users({ users }){
 
-    const usersDisplay = users.map((u) => {
-        return(<div>
-            <h2>{u.name}</h2>
-            <img src={u.img_url} />
-        </div>
-        )
-    })
+    const usersDisplay = users.map((user) => <UserCard user={user} key={user.id}/>)
     
     return(
         <div>

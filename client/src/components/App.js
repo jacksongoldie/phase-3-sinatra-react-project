@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 function App() {
 
   const [users, setUsers] = useState([]);
+  //set tasks and prop down to usertasks, filter tasks by user id
 
   useEffect(() => {
     fetch(`http://localhost:9291/users`)
