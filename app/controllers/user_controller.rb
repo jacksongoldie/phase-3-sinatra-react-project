@@ -1,7 +1,7 @@
 class UserController < ApplicationController
 
     get '/users' do
-        User.all.to_json
+        User.all.to_json(include: :tasks)
     end
 
     post '/users' do
