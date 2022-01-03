@@ -1,6 +1,6 @@
-function UserTasks({ tasks }){
+function UserTasks(){
 
-    console.log(tasks)
+
     return(
         <div>
             <h1>User Tasks</h1>

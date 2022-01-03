@@ -1,13 +1,13 @@
 import AddButtons from "./AddButtons";
 
-function Header(){
+function Header({ users, onTaskUpdate, onCreateUser }){
     return(
         <>
         <div>
             <h1>To-Do</h1>
         </div>
         <div>
-            <AddButtons />
+            <AddButtons users={users} onTaskUpdate={onTaskUpdate} onCreateUser={onCreateUser}/>
         </div>
         </>
     )

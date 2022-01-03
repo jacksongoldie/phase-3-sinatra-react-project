@@ -5,8 +5,9 @@ class UserController < ApplicationController
     end
 
     post '/users' do
-        user = User.create(name: params[:name], img_url: params[:img_url])
-        user.to_json
+        #leaving off img_url so that all users are created with default image
+        user = User.create(name: params[:name])
+        user.to_json(include: :tasks)
     end
 
     delete '/users/:id' do

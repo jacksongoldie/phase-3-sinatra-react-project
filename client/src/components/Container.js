@@ -1,7 +1,7 @@
 import Users from "./Users";
 import UserTasks from "./UserTasks";
 
-function Container({ users, tasks }) {
+function Container({ users }) {
 
     
     return(
@@ -11,7 +11,7 @@ function Container({ users, tasks }) {
                 <Users users={users} />
             </div>
             <div>
-                <UserTasks tasks={tasks} />
+                <UserTasks />
             </div>
         </div>
         

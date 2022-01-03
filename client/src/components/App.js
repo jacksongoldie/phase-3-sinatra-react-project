@@ -7,23 +7,34 @@ import { useState, useEffect } from 'react';
 function App() {
 
   const [users, setUsers] = useState([]);
-  //set tasks and prop down to usertasks, filter tasks by user id
-  const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:9291/users`)
     .then(r => r.json())
     .then((data) => setUsers(data))
-
-    fetch(`http://localhost:9291/tasks`)
-    .then(r => r.json())
-    .then((data) => setTasks(data))
   }, [])
+
+  function onTaskUpdate(task){
+    const updatedUsers = users.map((u) => {
+      if(u.id == task.user_id){
+        u.tasks = [...u.tasks, task]
+        return u
+      } 
+      else{
+        return u
+      }
+  })
+  setUsers(updatedUsers)
+}
+
+  function onCreateUser(user){
+    setUsers([user, ...users])
+  }
 
   return (
     <div className="App">
-      <Header />
-      <Container users={users} tasks={tasks} />
+      <Header users={users} onTaskUpdate={onTaskUpdate} onCreateUser={onCreateUser} />
+      <Container users={users} />
       <Champion />
     </div>
   );
