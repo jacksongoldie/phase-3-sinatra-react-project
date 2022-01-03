@@ -92,7 +92,7 @@ debugger;
         <div>
             <form onSubmit={handleTaskSubmit}>
                 <input type='text' value={task.desc} placeholder='enter task description' name='desc' onChange={handleTaskChange} />
-                <select name="user_id" value={task.user_id} onChange={handleTaskChange} >
+                <select name="user_id" value={task.user_id} onChange={handleTaskChange} required >
                         {/*GETTING AN ERROR IN CONSOLE FOR USING SELECTED BY DEFAULTVALUE AINT WORKIN :/
                         default value allows for placeholder while disabled keeps it from being selected*/}
                         <option value="0" disabled >Select...</option>

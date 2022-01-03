@@ -10,9 +10,6 @@ function Container({ users }) {
                 <h1>Container</h1>
                 <Users users={users} />
             </div>
-            <div>
-                <UserTasks />
-            </div>
         </div>
         
     )

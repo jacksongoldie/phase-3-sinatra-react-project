@@ -1,9 +1,8 @@
-function UserTasks(){
-
+function UserTasks({ tasks }){
 
     return(
         <div>
-            <h1>User Tasks</h1>
+            <p>{tasks.map((t) => <li key={t.id}>{t.desc}</li>)}</p>
         </div>
     )
 }
