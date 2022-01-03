@@ -1,8 +1,15 @@
+import AddButtons from "./AddButtons";
+
 function Header(){
     return(
+        <>
         <div>
-            <h1>Header</h1>
+            <h1>To-Do</h1>
         </div>
+        <div>
+            <AddButtons />
+        </div>
+        </>
     )
 }
 
