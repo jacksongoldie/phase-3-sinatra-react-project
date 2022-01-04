@@ -1,14 +1,13 @@
 import Users from "./Users";
-import UserTasks from "./UserTasks";
 
-function Container({ users }) {
+function Container({ users, onDeleteTask, onDeleteUser }) {
 
     
     return(
         <div>
             <div>
                 <h1>Container</h1>
-                <Users users={users} />
+                <Users users={users} onDeleteTask={onDeleteTask} onDeleteUser={onDeleteUser} />
             </div>
         </div>
         

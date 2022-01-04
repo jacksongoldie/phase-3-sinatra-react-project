@@ -1,8 +1,18 @@
-function UserTasks({ tasks }){
+function UserTasks({ tasks, onDeleteTask }){
 
+    function handleDelete(id){
+        fetch(`http://localhost:9291/tasks/${id}`, {
+            method: 'DELETE'
+        })
+        .then(r => r.json())
+        .then(deleted => onDeleteTask(deleted))
+    }
+    
     return(
         <div>
-            <p>{tasks.map((t) => <li key={t.id}>{t.desc}</li>)}</p>
+            {tasks.map((t) =>
+            <p key={t.id}>{t.desc} <button onClick={(e) => handleDelete(t.id)}>x</button></p>
+            )}
         </div>
     )
 }
