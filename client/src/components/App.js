@@ -55,7 +55,6 @@ function App() {
     <div className="App">
       <Header users={users} onTaskUpdate={onTaskUpdate} onCreateUser={onCreateUser} />
       <Container users={users} onDeleteTask={onDeleteTask} onDeleteUser={onDeleteUser} />
-      <Champion />
     </div>
   );
 }
