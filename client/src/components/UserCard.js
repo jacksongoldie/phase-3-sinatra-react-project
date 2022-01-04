@@ -1,7 +1,6 @@
 import UserTasks from "./UserTasks";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image';
 
 function UserCard({ user, onDeleteTask, onDeleteUser }){
 
