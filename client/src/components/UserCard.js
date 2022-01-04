@@ -1,4 +1,7 @@
 import UserTasks from "./UserTasks";
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
 
 function UserCard({ user, onDeleteTask, onDeleteUser }){
 
@@ -11,11 +14,14 @@ function UserCard({ user, onDeleteTask, onDeleteUser }){
     }
 
     return(
-        <div>
-            <img src={user.img_url} alt="profile image" />
-            <h2>{user.name} <button onClick={handleDelete}>❌</button></h2>
-            <UserTasks tasks={user.tasks} onDeleteTask={onDeleteTask} />
-            
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Card style={{ width: '20em', background: '#000', margin: '.1em' }}>
+                <Card.Img variant="top" className='fluid rounded-circle'  src={user.img_url} alt="profile" />
+                <Card.Body className="text-white" style={{ margin: '.1em' }}>
+                    <Card.Title>{user.name} <Button variant="outline-danger" onClick={handleDelete}>❌</Button></Card.Title>
+                    <UserTasks tasks={user.tasks} onDeleteTask={onDeleteTask} />
+                </Card.Body>
+            </Card>
         </div>
     )
 }

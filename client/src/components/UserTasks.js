@@ -1,3 +1,5 @@
+import Button from 'react-bootstrap/Button';
+
 function UserTasks({ tasks, onDeleteTask }){
 
     function handleDelete(id){
@@ -11,7 +13,7 @@ function UserTasks({ tasks, onDeleteTask }){
     return(
         <div>
             {tasks.map((t) =>
-            <p key={t.id}>{t.desc} <button onClick={(e) => handleDelete(t.id)}>x</button></p>
+            <p key={t.id}>{t.desc} <Button variant="outline-warning" onClick={(e) => handleDelete(t.id)}>x</Button></p>
             )}
         </div>
     )

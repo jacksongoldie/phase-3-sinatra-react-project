@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 
 function AddButtons({ users, onTaskUpdate, onCreateUser }){
 
@@ -44,7 +45,6 @@ function AddButtons({ users, onTaskUpdate, onCreateUser }){
 
     function handleUserSubmit(e){
         e.preventDefault();
-debugger;
         fetch(`http://localhost:9291/users`, {
             method: 'POST',
             headers: {
@@ -75,7 +75,7 @@ debugger;
     return(
         <>
         <div>
-            <button onClick={handleAddUser}>{addingUser ? '- Done Adding Users' : '+ Add Users' }</button>
+            <Button variant="primary" onClick={handleAddUser}>{addingUser ? '- Done Adding Users' : '+ Add Users' }</Button>
         </div>
         {addingUser ? 
         <div>
@@ -86,7 +86,7 @@ debugger;
         </div> :
         null}
         <div>
-            <button onClick={handleAddTask}>{addingTask ? '- Done Adding Tasks' : '+ Add Tasks' }</button>
+            <Button variant="primary" onClick={handleAddTask}>{addingTask ? '- Done Adding Tasks' : '+ Add Tasks' }</Button>
         </div>
         {addingTask ? 
         <div>

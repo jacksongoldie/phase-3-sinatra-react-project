@@ -17,7 +17,7 @@ function App() {
   //should i set state for tasks and use as dependency for users fetch??
   function onTaskUpdate(task){
     const updatedUsers = users.map((u) => {
-      if(u.id == task.user_id){
+      if(u.id === task.user_id){
         u.tasks = [...u.tasks, task]
         return u
       } 
@@ -30,8 +30,8 @@ function App() {
 
   function onDeleteTask(deletedTask){
     const updatedUsers = users.map((u) => {
-      if(u.id == deletedTask.user_id){
-        const updatedTasks = u.tasks.filter((t) => t.id != deletedTask.id)
+      if(u.id === deletedTask.user_id){
+        const updatedTasks = u.tasks.filter((t) => t.id !== deletedTask.id)
         u.tasks = updatedTasks
         return u
       } 
@@ -43,7 +43,7 @@ function App() {
   }
 
   function onDeleteUser(deletedUser){
-    const updatedUsers = users.filter((u) => u.id != deletedUser.id)
+    const updatedUsers = users.filter((u) => u.id !== deletedUser.id)
     setUsers(updatedUsers)
   }
 
