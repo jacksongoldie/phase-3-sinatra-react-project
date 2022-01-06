@@ -1,7 +1,8 @@
 class UserController < ApplicationController
 
     get '/users' do
-        User.all.to_json(include: :tasks)
+        users = User.all.sort_by(&:name)
+        users.to_json(include: :tasks)
     end
 
     post '/users' do
@@ -12,8 +13,8 @@ class UserController < ApplicationController
 
     delete '/users/:id' do
         user = User.find(params[:id])
-        #LEFT OFF HERE AFTER TRYING DESTROYALL - NEED TO SEE WHAT IS HAPPENING ON DELETE USER
         user.destroy
+        #iterate over user.tasks to remove user's tasks -- NO
         user.to_json(include: :tasks)
     end
 
