@@ -1,7 +1,7 @@
 class UserController < ApplicationController
 
     get '/users' do
-        users = User.all.sort_by(&:name)
+        users = User.all.sort_by { |u| u[:name].downcase }
         users.to_json(include: :tasks)
     end
 
@@ -14,7 +14,7 @@ class UserController < ApplicationController
     delete '/users/:id' do
         user = User.find(params[:id])
         user.destroy
-        #iterate over user.tasks to remove user's tasks -- NO
+        #iterate over user.tasks to remove user's tasks -- NO; added dependent: :destroy to model
         user.to_json(include: :tasks)
     end
 

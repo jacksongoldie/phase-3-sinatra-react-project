@@ -15,8 +15,9 @@ function UserCard({ user, onDeleteTask, onDeleteUser }){
     return(
         <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Card style={{ width: '20em', background: '#000', margin: '.1em' }}>
-                <Card.Img variant="top" className='fluid rounded-circle'  src={user.img_url} alt="profile" />
+                
                 <Card.Body className="text-white" style={{ margin: '.1em' }}>
+                <Card.Img style={{ width: '200px', marginBottom: '1em' }} variant="top" className="fluid rounded-circle"  src={user.img_url} alt="profile" />
                     <Card.Title>{user.name} <Button variant="outline-danger" onClick={handleDelete}>x</Button></Card.Title>
                     <UserTasks tasks={user.tasks} onDeleteTask={onDeleteTask} />
                 </Card.Body>
