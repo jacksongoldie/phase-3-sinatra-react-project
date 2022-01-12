@@ -16,4 +16,4 @@ The user can then be assigned tasks.
 
 The user's tasks can be deleted as well as the entire user.
 
-![preview of application](/home/goldi/Development/code/phase-3-sinatra-react-project/client/public/to-do.gif)
+![preview of application](https://github.com/jacksongoldie/phase-3-sinatra-react-project/blob/main/client/public/to-do.gif?raw=true)
